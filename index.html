@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/styles.css">
+	<title>LIM4O</title>
+</head>
+
+<body>
+	<div class="image-bg" id="img-bg">
+		<div class="close" onclick="closeImg()">
+			<div class="lines line1"></div>
+			<div class="lines line2"></div>
+		</div>
+		<div class="image">
+			<img src="./assets/img/logo.png" alt="logo">
+		</div>
+	</div>
+	<section>
+		<div class="circle"></div>
+		<header>
+			<div class="logo-container" onclick="openImg()"><img src="./assets/img/logo.png" class="logo" alt="Logo"></div>
+			<div class="toggle" onclick="toggleMenu();"></div>
+			<ul class="navigation">
+				<li><a href="https://lim4ovgg.github.io/Portifolio-novo/#sobre">Sobre</a></li>
+				<li><a href="https://lim4ovgg.github.io/Portifolio-novo/#projetos">Projetos</a></li>
+				<li><a href="https://lim4ovgg.github.io/Portifolio-novo/#habilidades">Habilidades</a></li>
+				<li><a href="https://lim4ovgg.github.io/Portifolio-novo/#contato">Contato</a></li>
+			</ul>
+		</header>
+		<div class="content">
+			<div class="textBox">
+				<h1>It's not just Fruit<br>It's <span>LIM4O</span></h1>
+				<p>Limão (espécie Citrus limon) é o fruto do limoeiro, uma pequena árvore de folha perene originária da
+					região sudeste da Ásia, da família das rutáceas. No Brasil é também popularmente denominado limão
+					siciliano, de forma a distingui-lo de três outras espécies de citrinos chamadas de "limões" no
+					Brasil e "limas" nos restantes países lusófonos: Citrus x latifolia ou limão-taiti, Citrus
+					aurantiifolia ou limão-galego, Citrus x limonia ou limão-cravo.</p>
+				<a href="https://pt.wikipedia.org/wiki/Limão" rel="noopener" target="_blank">Learn More</a>
+			</div>
+			<div class="imgBox">
+				<img src="./assets/img/img1.png" class="lemon" alt="Limão">
+			</div>
+		</div>
+		<ul class="thumb">
+			<li>
+				<img src="./assets/img/thumb1.png" onclick="imgSlider('./assets/img/img1.png');changeCircleColor('#017143');changeLemonType('Limão taiti')" alt="limão taiti">
+			</li>
+			<li>
+				<img src="./assets/img/thumb2.png" onclick="imgSlider('./assets/img/img2.png');changeCircleColor('#ffff00');changeLemonType('Limão siciliano')" alt="limão siciliano">
+			</li>
+			<li>
+				<img src="./assets/img/thumb3.png" onclick="imgSlider('./assets/img/img3.png');changeCircleColor('#ffa500');changeLemonType('Limão-cravo')" alt="limão-cravo">
+			</li>
+		</ul>
+		<h2 class="type" id="type">Limão taiti</h2>
+	</section>
+
+	<script type="text/javascript">
+		function openImg() {
+			document.querySelector('#img-bg').style.display = "flex";
+		}
+		function closeImg() {
+			document.querySelector('#img-bg').style.display = "none";
+		}
+		function imgSlider(anything) {
+			document.querySelector('.lemon').src = anything;
+		}
+		function changeCircleColor(color) {
+			const circle = document.querySelector('.circle');
+			circle.style.background = color;
+		}
+		function toggleMenu() {
+			var menuToggle = document.querySelector('.toggle')
+			var navigation = document.querySelector('.navigation')
+			menuToggle.classList.toggle('active')
+			navigation.classList.toggle('active')
+		}
+		function changeLemonType(type) {
+			document.querySelector('#type').innerHTML = type;
+		}
+	</script>
+</body>
+
+</html>
