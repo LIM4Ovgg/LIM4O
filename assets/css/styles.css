@@ -313,6 +313,10 @@ header ul li a {
 		max-width: 300px;
 	}
 
+	.thumb {
+		bottom: 2%;
+	}
+
 	.thumb li img {
 		max-width: 40px;
 	}
